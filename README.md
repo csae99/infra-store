@@ -1,12 +1,11 @@
-# AWS S3 Glacier Vault Storage
+# AWS S3 Glacier Vault Storage (Transition Update)
 
-This Terraform project provisions an Amazon S3 bucket configured with versioning and an S3 Intelligent-Tiering lifecycle rule to automatically transition objects after 7 days.
+This Terraform project provisions an AWS S3 bucket configured with versioning enabled and a lifecycle rule designed to transition objects to S3 Intelligent-Tiering after 14 days.
 
 ## Architecture
 
-- **S3 Bucket**: Stores uploaded client objects.
-- **S3 Bucket Versioning**: Keeps multiple variants of an object in the same bucket.
-- **S3 Lifecycle Configuration**: Automatically transitions objects to the `INTELLIGENT_TIERING` storage class after 7 days.
+- **Root Module**: Orchestrates the deployment, configuring providers and calling the `storage` module.
+- **Storage Module (`modules/storage`)**: Manages the `aws_s3_bucket`, `aws_s3_bucket_versioning`, and `aws_s3_bucket_lifecycle_configuration` resources.
 
 ## Usage
 
