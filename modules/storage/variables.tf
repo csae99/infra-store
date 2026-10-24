@@ -1,4 +1,4 @@
 variable "bucket_name" {
+  description = "The name of the S3 vault bucket."
   type        = string
-  description = "The name of the S3 bucket to create"
 }

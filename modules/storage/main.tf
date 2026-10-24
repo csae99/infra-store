@@ -13,11 +13,11 @@ resource "aws_s3_bucket_lifecycle_configuration" "vault_lifecycle" {
   bucket = aws_s3_bucket.vault.id
 
   rule {
-    id     = "transition-to-intelligent-tiering-7-days"
+    id     = "transition-to-intelligent-tiering-14-days"
     status = "Enabled"
 
     transition {
-      days          = 7
+      days          = 14
       storage_class = "INTELLIGENT_TIERING"
     }
   }
